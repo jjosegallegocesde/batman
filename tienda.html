@@ -40,8 +40,13 @@
                     </ul>
                     <ul class="navbar-nav mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active position-relative" href="#exampleModal" data-bs-toggle="modal">
+                            <a id="botonvercarrito" class="nav-link active position-relative" href="#compraFinal"
+                                data-bs-toggle="modal">
                                 <i class="fas fa-shopping-cart fa-2x"></i>
+                                <span id="pildora"
+                                    class="invisible position-absolute top-10 start-10 translate-middle badge rounded-pill bg-danger">
+                                    99+
+                                </span>
                             </a>
                         </li>
                     </ul>
@@ -149,7 +154,7 @@
                                         <h5 id="tituloCarrito"></h5>
                                         <h6 id="precioCarrito"></h6>
                                         <div class="input-group mb-3">
-                                            <input type="number" class="form-control" value="1" id="cantidad">   
+                                            <input type="number" class="form-control" value="1" id="cantidad">
                                         </div>
                                     </div>
                                 </div>
@@ -164,6 +169,29 @@
             </div>
         </section>
 
+        <section>
+            <div class="modal fade" id="compraFinal">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Tienda Online</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="container">
+                                <div class="row" id="filacarrito">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-warning" id="botonAgregar">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </main>
 
@@ -198,7 +226,7 @@
         new WOW().init();
     </script>
     <script src="tiendallenado.js"></script>
-    <script src="tienda.js"></script>
+    <script src="js/controladorTienda.js" type="module"></script>
 </body>
 
 </html>
