@@ -1,6 +1,6 @@
 let productosBD = [
 
-    { foto: 'img/tienda1.jpg', nombre: "Batimovil Escala", precio: 150000},
+    { foto: 'img/tienda1.jpg', nombre: "Batimovil Escala", precio: 150000,descripcion:""},
     { foto: 'img/tienda2.jpg', nombre: "Camiseta Batman", precio: 50000},
     { foto: 'img/tienda3.jpg', nombre: "Gorra Batman DC", precio: 25000},
     { foto: 'img/tienda4.jpg', nombre: "Termo Batman DC", precio: 35500 },
@@ -13,43 +13,43 @@ let productosBD = [
 
 ]
 
-//creo la referencia al componente padre
-//creo una variable para almacenar la base
-//sobre la cual voy a pintar
-let fila=document.getElementById("fila")
+//Necesito recorrer un arreglo en JS
 
-//Recorrer arreglo
-//forEach
+//1.Creo una variable para almacenar la base sobre la cual voy a pintar
+let fila=document.getElementById("fila")
 productosBD.forEach(function(producto){
+    console.log(producto.foto)
     console.log(producto.nombre)
     console.log(producto.precio)
-    console.log(producto.foto)
-    //receta para pintar js
 
-    //1. comience a crear la estructura que necesite
+    //2. pintando etiquetas
 
-    //creo la columna
+    //div con la clase col
     let columna=document.createElement("div")
     columna.classList.add("col")
 
-    //creo la tarjeta
+    //div con las clases card h-100
     let tarjeta=document.createElement("div")
     tarjeta.classList.add("card")
     tarjeta.classList.add("h-100")
 
-    // creo la imagen
-    let foto = document.createElement("img")
+    //img con la clase card-img-top
+    let foto=document.createElement("img")
     foto.classList.add("card-img-top")
-    foto.src= producto.foto
+    foto.src=producto.foto
 
-    //2. ordenar la estructura
-    //Padres e hijos
+    //h4 con la clase text-center
+    let titulo=document.createElement("h4")
+    titulo.classList.add("text-center")
+    titulo.textContent=producto.nombre
 
+    //3. PADRES E HIJOS
     tarjeta.appendChild(foto)
+    tarjeta.appendChild(titulo)
+
     columna.appendChild(tarjeta)
     fila.appendChild(columna)
 
-
-
 })
+
 
