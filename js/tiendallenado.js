@@ -1,6 +1,4 @@
 
-export function pintarTienda(){
-
     let productosBD = [
 
         { foto: 'img/tienda1.jpg', nombre: "Batimovil Escala", precio: 150000,descripcion:""},
@@ -52,9 +50,6 @@ export function pintarTienda(){
         boton.classList.add("btn","btn-warning","mx-4","mb-4")
         boton.textContent="ver producto"
         
-        
-
-
         //3. PADRES E HIJOS
         tarjeta.appendChild(foto)
         tarjeta.appendChild(titulo)
@@ -65,12 +60,35 @@ export function pintarTienda(){
     
     })
     
-    //
+    //Lanzando el modal
+    let contenedorTienda=document.getElementById("fila")
+
+    contenedorTienda.addEventListener("click",function(evento){
+
+    if(evento.target.classList.contains("btn")){
+       
+        let modalinfo = new bootstrap.Modal(document.getElementById('modalinformacion'))
+        
+        //cargar informaciond el producto dentro del modal
+        
+        let fotoInfo=document.getElementById("fotoInfo")
+        fotoInfo.src=evento.target.parentElement.querySelector("img").src
+
+        let tituloFoto=document.getElementById("nombreInfo")
+        tituloFoto.textContent=evento.target.parentElement.querySelector("h4").textContent
+        
+        modalinfo.show()
+
+
+    }
+
+})
+    
 
 
 
 
-}
+
 
 
 
